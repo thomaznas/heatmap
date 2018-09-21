@@ -1,6 +1,7 @@
 var map; 
 var pointarray;
 var heatmap1,heatmap2,heatmap3;
+var zoomLevel1 = 10, zoomLevel2 = 12, zoomLevel3 = 11;
 var MY_MAPTYPE_ID = 'custom_style';
 
 var featureOpts = [
@@ -102,6 +103,7 @@ function initialize(){
     points1 = chicago.data.map(point1);
     heatmap1 = buildHeatmap(points1);
     heatmap1.setMap(map); 
+    map.setZoom(zoomLevel1);
   
 }
 
@@ -135,7 +137,8 @@ function point3(crime){
 function onClick1() {
 
   map.setCenter(myLatlng1);
-  
+  map.setZoom(zoomLevel1);
+   
 }
 
 function onClick2() {
@@ -148,6 +151,7 @@ function onClick2() {
   
   }
   map.setCenter(myLatlng2);
+  map.setZoom(zoomLevel2);
   
 }
 
@@ -161,6 +165,7 @@ function onClick3() {
   
   }
   map.setCenter(myLatlng3);
+  map.setZoom(zoomLevel3);
   
 }
 

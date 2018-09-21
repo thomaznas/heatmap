@@ -1,22 +1,54 @@
 <!DOCTYPE html>
-<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=visualization"></script>
-<script src="crime_2012_december.json" ></script>
+
+<!--  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-ipxVjAw5TXtg5I5TBev6PozsrT6ULhY&callback=initMap"
+	type="text/javascript">
+</script> 
+-->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-ipxVjAw5TXtg5I5TBev6PozsrT6ULhY&v=3.exp&sensor=false&libraries=visualization"></script>
+
+<script src="crime_2012_december.json" ></script>  <!-- Chicago -->
+<script src="LasVegas2017.json" ></script>   <!-- Las Vegas -->
+<script src="Oakland2017.json" ></script>   <!-- Las Vegas -->
+<script src="heatmap.js"></script>
+
+<style>
+ 
+ 
+.styled {
+    border: 0;
+    line-height: 2.5;
+    padding: 0 20px;
+    font-size: 1rem;
+    text-align: center;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+    border-radius: 10px;
+    background-color: rgba(220, 0, 0, 1);
+    background-image: linear-gradient(to top left,
+                                      rgba(0, 0, 0, .2),
+                                      rgba(0, 0, 0, .2) 30%,
+                                      rgba(0, 0, 0, 0));
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
+                inset -2px -2px 3px rgba(0, 0, 0, .6);
+}
+
+.styled:hover {
+    background-color: rgba(255, 0, 0, 1);
+}
+
+.styled:active {
+    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
+                inset 2px 2px 3px rgba(0, 0, 0, .6);
+}
+</style>
+
+<button class="styled" onclick= "onClick1()" >Chicago 2002</button>
+<button class="styled" onclick= "onClick2()" >LasVegas 2017</button>
+<button class="styled" onclick= "onClick3()" >Oakland 2017</button>
+
+</p>
+
 
 <div id="map-canvas" style="height:600px;width:800px"></div>
 
-<script type="text/javascript">
-
-function point(crime){
-    var point = {};
-    /*
-    point.latitude = crime[?];
-    point.longitude = crime[?];
-    */
-    return point;
-}
-
-var points = chicago.data.map(point);
-
-</script>
-<script src="heatmap.js"></script>
 </html>

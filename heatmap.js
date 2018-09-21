@@ -83,9 +83,9 @@ function initialize(){
     //  build map
     // ---------------------------------
     myLatlng1 = new google.maps.LatLng(41.886903, -87.722740);  // Chicago
-    myLatlng2 = new google.maps.LatLng(36.114647, -115.172813);  // LasVegas
-    myLatlng3 = new google.maps.LatLng(37.804363, -122.271111);  // Oakland
-
+    myLatlng2 = new google.maps.LatLng(37.804363, -122.271111);  // Oakland
+    myLatlng3 = new google.maps.LatLng(36.114647, -115.172813);  // LasVegas
+    
     myOptions1.center = myLatlng1;
 
     map = new google.maps.Map(document.getElementById('map-canvas'), myOptions1);
@@ -117,8 +117,8 @@ function point1(crime){
 function point2(crime){
   var point = {};
   
-  point.latitude = crime[17][1];
-  point.longitude = crime[17][2];
+  point.latitude = crime[16][1];
+  point.longitude = crime[16][2];
   
   return point;
 }
@@ -126,8 +126,8 @@ function point2(crime){
 function point3(crime){
   var point = {};
   
-  point.latitude = crime[16][1];
-  point.longitude = crime[16][2];
+  point.latitude = crime[17][1];
+  point.longitude = crime[17][2];
   
   return point;
 }
@@ -142,7 +142,7 @@ function onClick2() {
   
   if (isFirstTime2) {
     isFirstTime2 = 0;
-    points2 = lasvegas.data.map(point2);
+    points2 = oakland.data.map(point2);
     heatmap2 = buildHeatmap(points2);
     heatmap2.setMap(map); 
   
@@ -155,7 +155,7 @@ function onClick3() {
   
   if (isFirstTime3) {
     isFirstTime3 = 0;
-    points3 = oakland.data.map(point3);
+    points3 = lasvegas.data.map(point3);
     heatmap3 = buildHeatmap(points3);
     heatmap3.setMap(map); 
   
